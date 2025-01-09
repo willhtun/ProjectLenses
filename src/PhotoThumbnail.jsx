@@ -43,7 +43,7 @@ class PhotoThumbnail extends React.Component {
           <div class="photo-thumbnail-overlay"></div>
         </button>
         { this.state.showPhoto && (
-          <div>
+          <div class="photo-details-wrapper">
             <div class="photo-details-background"></div>
             <div ref={this.wrapperRef}><PhotoDetails photoData={this.props.photoData}></PhotoDetails></div>
           </div>

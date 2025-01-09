@@ -1,15 +1,25 @@
 .photo-details {
   width: fit-content;
   min-width: max-content;
-  height: 630px;
+  height: 1000px;
   position: fixed;
-  margin-left: auto;
-  margin-right: auto;
-  top: 5%;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 20;
+}
+
+@media only screen and (max-height: 700px) {
+  .photo-details {
+    width: fit-content;
+    min-width: max-content;
+    height: 630px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+  }
 }
 
 .photo-details-left {
