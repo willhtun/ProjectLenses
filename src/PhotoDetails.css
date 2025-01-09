@@ -72,12 +72,12 @@
 }
 
 .photo-details-title h1 {
-  left: 6%;
+  left: 8%;
   text-align: left;
 }
 
 .photo-details-title h2 {
-  right: 6%;
+  right: 8%;
   text-align: right;
 }
 
@@ -89,15 +89,15 @@
   text-align: left;
   letter-spacing: .1rem;
   line-height: 2;
-  width: 80%;
+  width: 84%;
   padding: 0;
   margin: auto;
-  margin-top: 8%;
+  margin-top: 7%;
 }
 
 .photo-details-location-text h3 {
   width: 100%;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
 }
 
