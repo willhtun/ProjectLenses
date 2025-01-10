@@ -34,7 +34,7 @@
   position: relative;
 }
 
-.photo-details-description {
+.photo-details-description, .photo-details-description-poem {
   width: 100%;
   background-color: #E8E8E8;
   flex: 10;
@@ -44,7 +44,7 @@
 
 .photo-details-location {
   width: 100%;
-  background-color: green;
+  background-color: #E8E8E8;
   flex: 6;
   position: relative;
   border: 0;
@@ -93,6 +93,25 @@
   padding: 0;
   margin: auto;
   margin-top: 7%;
+  white-space: pre-line;
+}
+
+.photo-details-description-poem p {
+  font-family: "Asar", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: .1rem;
+  line-height: 3;
+  width: 100%;
+  padding: 0;
+  margin: auto;
+  white-space: pre-line;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .photo-details-location-text h3 {

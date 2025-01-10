@@ -42,6 +42,7 @@ class Admin extends React.Component {
             <textarea class="admin-row-latitude" name="latitude" defaultValue={data[i]["location"]["latitude"]}></textarea>
             <textarea class="admin-row-longitude" name="longitude" defaultValue={data[i]["location"]["longitude"]}></textarea>
             <textarea class="admin-row-location" name="location" defaultValue={data[i]["location"]["name"]}></textarea>
+            <input class="admin-row-isPoem" type="checkbox" name="is_poem" defaultChecked={data[i]["is_poem"]}></input>
             <input type="submit" value="Update"/>
           </form>
           <hr></hr>
@@ -56,6 +57,7 @@ class Admin extends React.Component {
   updateEntry(event) {
     event.preventDefault()
     let formData = serialize(event.target, { hash: true });
+    let isPoemChecked = formData["is_poem"]? true: false; // Needed for unchecked, formData will not have field is_poem
     let payload = {
       "id": formData["id"],
       "sort_key": formData["sort_key"],
@@ -66,7 +68,8 @@ class Admin extends React.Component {
         "name": formData["location"],
         "latitude": formData["latitude"],
         "longitude": formData["longitude"]
-      }
+      },
+      "is_poem": isPoemChecked
     }
     axios.put(config.lensesBackendUrl + "/v1/photos/" + formData["id"], payload)
       .then(response => {
@@ -84,15 +87,16 @@ class Admin extends React.Component {
         <br></br>
         <br></br>
         <div class="admin-row-container-header">
-            <div class="admin-row-id-header">Id</div>
-            <div class="admin-row-sort-header">Sort</div>
-            <div class="admin-row-thumbnail-header">Thumbnail</div>
-            <div class="admin-row-title-header">Title</div>
-            <div class="admin-row-date-header">Date</div>
-            <div class="admin-row-description-header">Description</div>
-            <div class="admin-row-latitude-header">Latitude</div>
-            <div class="admin-row-longitude-header">Longitude</div>
-            <div class="admin-row-location-header">Location</div>
+          <div class="admin-row-id-header">Id</div>
+          <div class="admin-row-sort-header">Sort</div>
+          <div class="admin-row-thumbnail-header">Thumbnail</div>
+          <div class="admin-row-title-header">Title</div>
+          <div class="admin-row-date-header">Date</div>
+          <div class="admin-row-description-header">Description</div>
+          <div class="admin-row-latitude-header">Latitude</div>
+          <div class="admin-row-longitude-header">Longitude</div>
+          <div class="admin-row-location-header">Location</div>
+          <div class="admin-row-isPoem-header">Is Poem?</div>
         </div>
         <br></br>
         <hr></hr>

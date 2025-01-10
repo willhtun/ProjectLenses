@@ -8,34 +8,60 @@ class PhotoDetails extends React.Component {
     this.photo_title = this.props.photoData["title"]
     this.photo_date = this.props.photoData["date"]
     this.photo_description = this.props.photoData["description"]
+    this.photo_description_is_poem = this.props.photoData["is_poem"]
     this.photo_latitude = this.props.photoData["location"]["latitude"]
     this.photo_longitude = this.props.photoData["location"]["longitude"]
     this.photo_location_name = this.props.photoData["location"]["name"]
   }
 
-  openMaps = () => {
-    window.open("https://www.google.com/maps/place/" + this.photo_latitude + "+" + this.photo_longitude, "_blank")
-  }
-
   render() {
-    return (
-      <div class="photo-details">
-        <div class="photo-details-left" style={{ backgroundImage:"url(" + this.photo_url + ")" }}></div>
-        <div class="photo-details-right">
-          <div class="photo-details-title">
-            <h1>{this.photo_title}</h1>
-            <h2>{this.photo_date}</h2>
+    if (this.photo_description_is_poem) {
+      return (
+        <div class="photo-details">
+          <div class="photo-details-left" style={{ backgroundImage:"url(" + this.photo_url + ")" }}></div>
+          <div class="photo-details-right">
+            <div class="photo-details-title">
+              <h1>{this.photo_title}</h1>
+              <h2>{this.photo_date}</h2>
+            </div>
+            <div class="photo-details-description-poem">
+              <p>{this.photo_description}</p>
+            </div>
+            <iframe 
+              class="photo-details-location"
+              loading="lazy" 
+              src={ "https://www.google.com/maps/embed/v1/place?q=" + this.photo_latitude + "%2C" + this.photo_longitude + "&key=AIzaSyCzAeGno02JZsVHOHo56uZJLvSn0It6ioE" }>
+            </iframe>
+            <div class="photo-details-location-text">
+              <h3>{this.photo_location_name}</h3>
+            </div>
           </div>
-          <div class="photo-details-description">
-            <p>{this.photo_description}</p>
+        </div> 
+      )
+    } else {
+      return (
+        <div class="photo-details">
+          <div class="photo-details-left" style={{ backgroundImage:"url(" + this.photo_url + ")" }}></div>
+          <div class="photo-details-right">
+            <div class="photo-details-title">
+              <h1>{this.photo_title}</h1>
+              <h2>{this.photo_date}</h2>
+            </div>
+            <div class="photo-details-description">
+              <p>{this.photo_description}</p>
+            </div>
+            <iframe 
+              class="photo-details-location"
+              loading="lazy" 
+              src={ "https://www.google.com/maps/embed/v1/place?q=" + this.photo_latitude + "%2C" + this.photo_longitude + "&key=AIzaSyCzAeGno02JZsVHOHo56uZJLvSn0It6ioE" }>
+            </iframe>
+            <div class="photo-details-location-text">
+              <h3>{this.photo_location_name}</h3>
+            </div>
           </div>
-          <button class="photo-details-location" onClick={this.openMaps.bind(null, true)}></button>
-          <div class="photo-details-location-text">
-            <h3>{this.photo_location_name}</h3>
-          </div>
-        </div>
-      </div> 
-    )
+        </div> 
+      )
+    }
   }
 }
 

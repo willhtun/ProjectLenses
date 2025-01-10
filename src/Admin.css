@@ -1,4 +1,4 @@
-.admin-row-id, .admin-row-sort {
+.admin-row-id, .admin-row-sort, .admin-row-sort-isPoem {
     width: 30px; 
     margin-right: 10px;
     display: inline-block;
@@ -54,7 +54,7 @@
     resize: none;
 }
 
-.admin-row-title-header, .admin-row-date-header, .admin-row-longitude-header, .admin-row-latitude-header, .admin-row-location-header {
+.admin-row-title-header, .admin-row-date-header, .admin-row-longitude-header, .admin-row-latitude-header, .admin-row-location-header, .admin-row-isPoem-header {
     width: 125px; 
     margin-right: 17px;
     display: inline-block;
