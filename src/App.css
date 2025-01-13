@@ -30,11 +30,11 @@ p {
   font-weight: 400;
   text-align: center;
   letter-spacing: .1rem;
-  width: 800px;
+  width: 1000px;
   margin: auto;
   margin-bottom: 100px;
-  padding-left: 230px;
-  padding-right: 230px;
+  padding-left: 130px;
+  padding-right: 130px;
 }
 
 .photo-grid {

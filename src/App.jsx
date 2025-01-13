@@ -49,7 +49,7 @@ class App extends React.Component {
         <h2>Through My</h2>
         <h1>LENSES</h1>
         <p>
-          Scenery, buildings and objects evoke emotions in us daily. These are the ones that I experienced from a particular angle, within a specific frame, for a fleeting moment.
+          The world around us is constantly evoking feelings and emotions in us, whether it be through the scenery, structures or mundane objects. These are the ones that sparked me to pull out my camera so that I could capture the fleeting moment, from a particular angle, within a specific frame.
         </p>
         <div class="photo-grid">
           <Grid2 container spacing={0} width={this.grid_width}>
