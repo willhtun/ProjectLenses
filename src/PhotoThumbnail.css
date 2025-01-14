@@ -41,3 +41,16 @@
     left: 0;
     z-index: 5;
 }
+
+@media only screen and (max-width: 600px) {
+    .photo-thumbnail {
+        width: 160px;
+        height: 200px;
+        margin: 10px;
+    }
+
+    .photo-thumbnail-overlay {
+        width: 160px;
+        height: 200px;
+    }
+}

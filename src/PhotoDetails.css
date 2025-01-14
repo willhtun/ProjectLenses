@@ -104,9 +104,11 @@
   text-align: center;
   letter-spacing: .1rem;
   line-height: 3;
-  width: 100%;
+  width: 90%;
   padding: 0;
   margin: auto;
+  margin-left: 5%;
+  margin-right: 5%;
   white-space: pre-line;
   position: absolute;
   top: 50%;
@@ -120,23 +122,50 @@
   text-align: center;
 }
 
-@media only screen and (max-height: 1000px) {
+@media only screen and (max-width: 600px) {
   .photo-details {
-    width: fit-content;
-    min-width: max-content;
-    height: 630px;
+    width: 90%;
+    height: 100%;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0%;
+    left: 0%;
+    transform: translate(0%, 0%);
+    margin-left: 5%;
     z-index: 20;
+    overflow-y: auto;
   }
 
-  .photo-details-title h1, .photo-details-title h2, .photo-details-title h3, .photo-details-location-text h3 {
-    font-family: "Afacad", serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
+  .photo-details-left {
+    width: 100%;
+    height: fit-content;
+    aspect-ratio: 4/5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    float: none;
+    margin-right: 0;
+    margin-top: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .photo-details-right {
+    width: 100%;
+    height: 370px;
+    aspect-ratio: 1/2;
+    margin-bottom: 50px;
+    float: none;
+    display: block;
+  }
+
+  .photo-details-title {
+    width: 100%;
+    height: 40px;
+    background-color: #E8E8E8;
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .photo-details-title h1, .photo-details-title h2, .photo-details-title h3, .photo-details-location-text h3  {
+    font-size: 18px;
     width: 90%;
     margin: auto;
     position: absolute;
@@ -145,23 +174,58 @@
     transform: translateY(-50%);
   }
 
-  .photo-details-description p {
-    font-family: "Asar", serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
+  .photo-details-title h1 {
+    left: 5%;
     text-align: left;
-    letter-spacing: .1rem;
-    line-height: 1.6;
-    width: 88%;
-    padding: 0;
-    margin: auto;
-    margin-top: 5%;
   }
   
-  .photo-details-location-text h3 {
+  .photo-details-title h2 {
+    right: 5%;
+    text-align: right;
+  }
+
+  .photo-details-description, .photo-details-description-poem {
     width: 100%;
-    font-size: 16px;
-    text-align: center;
+    height: 280px;
+    background-color: #E8E8E8;
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .photo-details-description p {
+    font-size: 14px;
+    letter-spacing: .05rem;
+    line-height: 1.7;
+    width: 90%;
+    margin: auto;
+    margin-left: 5%;
+    margin-top: 5%;
+    position: absolute;
+  }
+  
+  .photo-details-description-poem p {
+    font-size: 14px;
+    letter-spacing: .05rem;
+    line-height: 1.5;
+    width: 90%;
+    margin: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    position: absolute;
+  }
+  
+  .photo-details-location {
+    display: none;
+  }
+  
+  .photo-details-location-text {
+    width: 100%;
+    height: 30px;
+    background-color: #E8E8E8;
+    position: absolute;
+  }
+
+  .photo-details-location-text h3 {
+    font-size: 14px;
   }
 }

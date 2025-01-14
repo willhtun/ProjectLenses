@@ -8,16 +8,23 @@ import config from '../configuration/prod.json';
 class App extends React.Component {
   constructor() {
     super(); 
-    this.state = { photoGrids: [] }
+    this.state = { photoGrids: [], grid_column_size: window.innerWidth < 600? 6: 4 }
     this.fetchPhotos = this.fetchPhotos.bind(this);
     this.setPhotoThumbnails = this.setPhotoThumbnails.bind(this);
-    this.grid_column_size = 4;
-    this.grid_width = 1260;
+    this.windowResized = this.windowResized.bind(this);
+    window.addEventListener('windowResized', (e) => this.windowResized(e));
   }
 
   componentDidMount() {
     this.fetchPhotos()
   }
+
+  windowResized(e) {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }
+
   
   fetchPhotos() {
     axios.get(config.lensesBackendUrl + "/v1/photos")
@@ -52,7 +59,7 @@ class App extends React.Component {
           The world around us is constantly evoking feelings and emotions in us, whether it be through the scenery, structures or mundane objects. These are the ones that sparked me to pull out my camera so that I could capture the fleeting moment, from a particular angle, within a specific frame.
         </p>
         <div class="photo-grid">
-          <Grid2 container spacing={0} width={this.grid_width}>
+          <Grid2 container spacing={0}>
             {this.state.photoGrids}
           </Grid2>
         </div>
