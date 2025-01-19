@@ -1,7 +1,8 @@
 .photo-details {
   width: fit-content;
   min-width: max-content;
-  height: 1000px;
+  height: 90%;
+  min-height: 720px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -24,6 +25,26 @@
   aspect-ratio: 1/2;
   display: flex;
   flex-direction: column;
+}
+
+.photo-details-left-padding, .photo-details-right-padding {
+  height: 100%;
+  float: left;
+  aspect-ratio: 1/14;
+}
+
+.photo-details-close {
+  width: 40%;
+  aspect-ratio: 1/2;
+  margin-top: 15%;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  cursor: pointer;
+}
+
+.photo-details-close-mobile {
+  display: none;
 }
 
 .photo-details-title {
@@ -85,10 +106,10 @@
   font-family: "Asar", serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 15px;
   text-align: left;
   letter-spacing: .1rem;
-  line-height: 2;
+  line-height: 1.8;
   width: 84%;
   padding: 0;
   margin: auto;
@@ -144,16 +165,48 @@
     float: none;
     margin-right: 0;
     margin-top: 50px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   
   .photo-details-right {
     width: 100%;
     height: 370px;
     aspect-ratio: 1/2;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     float: none;
     display: block;
+  }
+
+  .photo-details-left-padding, .photo-details-right-padding, .photo-details-close {
+    display: none;
+  }
+
+  .photo-details-close-mobile {
+    width: 30%;
+    height: 50px;
+    float: none;
+    display: block;
+    margin: auto;
+    margin-bottom: 50px;
+    cursor: pointer;
+  }
+
+  .photo-details-close-mobile-icon {
+    height: 100%;
+    width: 15%;
+    margin-right: 20px;
+    float: left;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+  }
+
+  .photo-details-close-mobile-text {
+    height: 100%;
+    float: left;
+    color: #E8E8E8;
+    display: flex;
+    align-items: center;
   }
 
   .photo-details-title {
@@ -161,7 +214,6 @@
     height: 40px;
     background-color: #E8E8E8;
     position: relative;
-    margin-bottom: 10px;
   }
 
   .photo-details-title h1, .photo-details-title h2, .photo-details-title h3, .photo-details-location-text h3  {
@@ -189,7 +241,7 @@
     height: 280px;
     background-color: #E8E8E8;
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   .photo-details-description p {

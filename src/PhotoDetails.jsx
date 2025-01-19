@@ -12,6 +12,7 @@ class PhotoDetails extends React.Component {
     this.photo_latitude = this.props.photoData["location"]["latitude"]
     this.photo_longitude = this.props.photoData["location"]["longitude"]
     this.photo_location_name = this.props.photoData["location"]["name"]
+    this.closePhoto = this.closePhoto.bind(this)
   }
 
   windowResized(e) {
@@ -22,9 +23,16 @@ class PhotoDetails extends React.Component {
     return () => window.removeEventListener("resize", handleResize);
   }
 
+  closePhoto() {
+    this.props.showPhotoHandler(false)
+  }
+
   render() {
     return (
       <div class="photo-details">
+        <div class="photo-details-left-padding">
+          <div class="photo-details-close" style={{ backgroundImage:"url(./public/close.svg)" }} onClick={this.closePhoto}></div>
+        </div>
         <div class="photo-details-left" style={{ backgroundImage:"url(" + this.photo_url + ")" }}></div>
         <div class="photo-details-right">
           <div class="photo-details-title">
@@ -42,6 +50,11 @@ class PhotoDetails extends React.Component {
           <div class="photo-details-location-text">
             <h3>{this.photo_location_name}</h3>
           </div>
+        </div>
+        <div class="photo-details-right-padding"></div>
+        <div class="photo-details-close-mobile" onClick={this.closePhoto}>
+          <div class="photo-details-close-mobile-icon" style={{ backgroundImage:"url(./public/close.svg)" }}></div>
+          <div class="photo-details-close-mobile-text">back</div>
         </div>
       </div> 
     )
