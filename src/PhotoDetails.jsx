@@ -32,7 +32,7 @@ class PhotoDetails extends React.Component {
       <div class="photo-details">
         <div class="photo-details-left-padding">
           <div class="photo-details-close-wrapper" onClick={this.closePhoto}>
-            <div class="photo-details-close" style={{ backgroundImage:"url(./public/close.svg)" }}></div>
+            <div class="photo-details-close" style={{ backgroundImage:"url(/close.svg)" }}></div>
           </div>
         </div>
         <div class="photo-details-left" style={{ backgroundImage:"url(" + this.photo_url + ")" }}></div>
@@ -55,7 +55,7 @@ class PhotoDetails extends React.Component {
         </div>
         <div class="photo-details-right-padding"></div>
         <div class="photo-details-close-mobile" onClick={this.closePhoto}>
-          <div class="photo-details-close-mobile-icon" style={{ backgroundImage:"url(./public/close.svg)" }}></div>
+          <div class="photo-details-close-mobile-icon" style={{ backgroundImage:"url(/close.svg)" }}></div>
           <div class="photo-details-close-mobile-text">
             <p>back</p>
           </div>
