@@ -1,4 +1,4 @@
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: "Afacad", serif;
   font-style: normal;
   font-weight: 400;
@@ -19,7 +19,11 @@ h2 {
 
 h3 {
   font-size: 26px;
-  margin-top: 50px;
+  color: gray;
+}
+
+h4 {
+  font-size: 16px;
   margin-bottom: 50px;
   color: gray;
 }
@@ -43,6 +47,41 @@ p {
   margin: auto;
 }
 
+.contacts-container {
+  width: 1260px;
+  height: 35px;
+  position: relative;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.contacts-name {
+  width: 1260px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.contacts-instagram {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  right: 10px;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+}
+
+.contacts-email {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  right: 70px;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+}
+
 @media only screen and (max-width: 600px) {
   h1, h2, h3 {
     width: 300px;
@@ -61,6 +100,12 @@ p {
   h3 {
     font-size: 19.5px;
   }
+
+  h4 {
+    font-size: 14px;
+    width: 340px;
+    text-align: center;
+  }
   
   p {
     font-size: 16px;
@@ -73,5 +118,43 @@ p {
   .photo-grid {
     width: 360px;
     margin: auto;
+  }
+
+  .contacts-container {
+    width: 340px;
+    height: 100px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .contacts-name {
+    width: 340px;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  .contacts-instagram {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+  }
+  
+  .contacts-email {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
   }
 }
