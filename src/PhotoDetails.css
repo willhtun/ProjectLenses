@@ -3,6 +3,7 @@
   min-width: max-content;
   height: 90%;
   min-height: 720px;
+  max-height: 900px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -135,7 +136,7 @@
   font-size: 16px;
   text-align: center;
   letter-spacing: .1rem;
-  line-height: 3;
+  line-height: 2;
   width: 90%;
   padding: 0;
   margin: auto;
@@ -159,6 +160,7 @@
     width: 90%;
     height: 100%;
     min-height: 0px;
+    max-height: none;
     position: fixed;
     top: 0%;
     left: 0%;
@@ -166,6 +168,12 @@
     margin-left: 5%;
     z-index: 20;
     overflow-y: auto;
+    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+  }
+
+  .photo-details::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari and Opera */
   }
 
   .photo-details-left {
@@ -182,7 +190,7 @@
   
   .photo-details-right {
     width: 100%;
-    height: 560px;
+    height: 600px;
     aspect-ratio: 1/2;
     margin-bottom: 40px;
     float: none;
@@ -262,7 +270,7 @@
 
   .photo-details-description, .photo-details-description-poem {
     width: 100%;
-    height: 280px;
+    height: 320px;
     background-color: #E8E8E8;
     position: relative;
     margin-bottom: 20px;

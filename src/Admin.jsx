@@ -29,6 +29,7 @@ class Admin extends React.Component {
 
   setEntry(data) {
     let tempEntries = []
+    data.sort(function(a, b) {return a['sort_key'] - b['sort_key']});
     for (let i = 0; i < data.length; i++) {
       tempEntries.push(
         <div>

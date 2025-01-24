@@ -38,6 +38,7 @@ class App extends React.Component {
 
   setPhotoThumbnails(data) {
     let tempPhotoGrids = []
+    data.sort(function(a, b) {return a['sort_key'] - b['sort_key']});
     for (let i = 0; i < data.length; i++) {
       tempPhotoGrids.push(
         <Grid2 size={this.grid_column_size}>
