@@ -1,7 +1,7 @@
 .photo-thumbnail {
     width: 400px;
     height: 500px;
-    background-color: aquamarine;
+    background-color: gray;
     margin: 10px;
     padding: 0px;
     border: none;
@@ -52,5 +52,18 @@
     .photo-thumbnail-overlay {
         width: 160px;
         height: 200px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1300px) {
+    .photo-thumbnail {
+        width: 320px;
+        height: 400px;
+        margin: 10px;
+    }
+
+    .photo-thumbnail-overlay {
+        width: 320px;
+        height: 400px;
     }
 }

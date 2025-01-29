@@ -1,10 +1,12 @@
 import './PhotoDetails.css'
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 function PhotoDetails(props) {
   const navigate = useNavigate();
+  const [photoLoaded, setPhotoLoaded] = useState(false);
   const photo_url = props.photoData["s3_image_url"]
+  const photo_thumbnail_url = props.photoData["s3_thumbnail_url"]
   const photo_title = props.photoData["title"]
   const photo_date = props.photoData["date"]
   const photo_description = props.photoData["description"]
@@ -30,6 +32,10 @@ function PhotoDetails(props) {
     props.showPhotoHandler(false)
   }
 
+  const handleImageLoaded = () => {
+    setPhotoLoaded(true)
+  }
+
   return (
     <div class="photo-details">
       <div class="photo-details-left-padding">
@@ -37,7 +43,10 @@ function PhotoDetails(props) {
           <div class="photo-details-close" style={{ backgroundImage:"url(/close.svg)" }}></div>
         </div>
       </div>
-      <div class="photo-details-left" style={{ backgroundImage:"url(" + photo_url + ")" }}></div>
+      <div class="photo-details-left">
+        {!photoLoaded && <img class="photo-details-left-loading" src={photo_thumbnail_url}></img> }
+        <img src={photo_url} onLoad={handleImageLoaded}></img>
+      </div>
       <div class="photo-details-right">
         <div class="photo-details-title">
           <h1>{photo_title}</h1>
