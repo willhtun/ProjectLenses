@@ -7,10 +7,10 @@ function Login() {
     const navigate = useNavigate();
     const { login } = useAuth();
 
-    const handleLogin = (e) => {
+    const handleLogin = async(e) => {
         e.preventDefault()
         let formData = serialize(e.target, { hash: true });
-        if (login(formData["username"], formData["password"])) {
+        if (await login(formData["username"], formData["password"])) {
             navigate("/admin");
         } else {
             alert("Wrong username and password")
