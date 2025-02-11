@@ -5,6 +5,7 @@ import PhotoDetails from './PhotoDetails';
 
 function PhotoThumbnail(props) {
   const [photoState, setPhotoState] = useState(false);
+  const [photoLoaded, setPhotoLoaded] = useState(false);
   const photo_thumbnail_url = props.photoData["s3_thumbnail_url"]
   const navigate = useNavigate();
 
@@ -18,11 +19,17 @@ function PhotoThumbnail(props) {
     }
   }
 
+  const handleImageLoaded = () => {
+    setPhotoLoaded(true)
+  }
+
   return (
     <div style={{ height:"fit-content" }}>
-      <button class="photo-thumbnail" style={{ backgroundImage:"url(" + photo_thumbnail_url + ")" }} onClick={showPhoto.bind(null, true)}>
-        <div class="photo-thumbnail-overlay"></div>
-      </button>
+      <div class="photo-thumbnail" onClick={showPhoto.bind(null, true)}>
+        {!photoLoaded && <img src={photo_thumbnail_url}></img> }
+        <img src={photo_thumbnail_url} onLoad={handleImageLoaded}></img>
+      </div>
+
       { photoState && (
         <div class="photo-details-wrapper">
           <div class="photo-details-background"></div>

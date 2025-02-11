@@ -6,8 +6,8 @@ import serialize from 'form-serialize';
 import { useAuth } from "./AuthProvider";
 
 function Admin(props) {
-  const [entries, setEntries] = useState(false);
-    const { getUserPassword } = useAuth();
+  const [entries, setEntries] = useState([]);
+  const { getUserPassword } = useAuth();
 
   const fetchPhotos = () => {
     axios.get(config.lensesBackendUrl + "/v1/photos")

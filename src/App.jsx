@@ -52,26 +52,32 @@ class App extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <h2>Through My</h2>
-        <h1>LENSES</h1>
-        <p>
-          The world around us is constantly evoking feelings and emotions in us, whether it be through the scenery, structures or mundane objects. These are the ones that sparked me to pull out my camera so that I could capture the fleeting moment, from a particular angle, within a specific frame.
-        </p>
-        <div class="photo-grid">
-          <Grid2 container spacing={0}>
-            {this.state.photoGrids}
-          </Grid2>
+    if (this.state.photoGrids.length == 0) {
+      return (
+        <div></div>
+      )
+    } else {
+      return (
+        <div>
+          <h2>Through My</h2>
+          <h1>LENSES</h1>
+          <p>
+            The world around us is constantly evoking feelings and emotions in us, whether it be through the scenery, structures or mundane objects. These are the ones that sparked me to pull out my camera so that I could capture the fleeting moment, from a particular angle, within a specific frame.
+          </p>
+          <div class="photo-grid">
+            <Grid2 container spacing={0}>
+              {this.state.photoGrids}
+            </Grid2>
+          </div>
+          <div class="contacts-container">
+            <a target="_blank" href="https://www.instagram.com/thewillfortography/" style={{ backgroundImage:"url(/instagram.svg)" }} class="contacts-instagram"></a>
+            <a target="_blank" href="mailto:willhtun42@email.com" style={{ backgroundImage:"url(/email.svg)" }} class="contacts-email"></a>
+            <h3 class="contacts-name">Willem Lu</h3>
+          </div>
+          <h4>© 2025 by Willem Lu</h4>
         </div>
-        <div class="contacts-container">
-          <a target="_blank" href="https://www.instagram.com/thewillfortography/" style={{ backgroundImage:"url(/instagram.svg)" }} class="contacts-instagram"></a>
-          <a target="_blank" href="mailto:willhtun42@email.com" style={{ backgroundImage:"url(/email.svg)" }} class="contacts-email"></a>
-          <h3 class="contacts-name">Willem Lu</h3>
-        </div>
-        <h4>© 2025 by Willem Lu</h4>
-      </div>
-    )
+      )
+    }
   }
 }
 
