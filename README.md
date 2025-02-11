@@ -1,4 +1,4 @@
-# Project Leneses
+# Project Lenses
 
 Front end for Project Lenses website
 
