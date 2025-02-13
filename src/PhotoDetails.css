@@ -133,21 +133,27 @@
   letter-spacing: .1rem;
   line-height: 1.8;
   width: 84%;
+  margin-left: 8%;
+  margin-top: 7%;
+  margin-bottom: 7%;
+  padding: 0;
+  white-space: pre-line;
+}
+
+.photo-details-description p {
+  margin-left: 0;
   padding-left: 8%;
   padding-right: 3%;
   margin-right: 5%;
-  margin-top: 7%;
-  margin-bottom: 7%;
-  white-space: pre-line;
 }
 
 .photo-details-description-poem p {
   font-size: 16px;
   text-align: center;
   line-height: 2;
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+  width: 84%;
+  margin-left: 8%;
+  margin-right: 8%;
   position: absolute;
   align-content: center;
 }
@@ -155,10 +161,6 @@
 .photo-details-description p, .photo-details-description-poem p {
   height: 86%;
   overflow-y: auto;
-}
-
-.photo-details-close-mobile-text {
-  padding: 0;
 }
 
 .photo-details-location-text h3 {
@@ -384,7 +386,7 @@
   }
   
   .photo-details-description-poem p {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.6;
   }
   
