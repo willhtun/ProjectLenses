@@ -133,9 +133,11 @@
   letter-spacing: .1rem;
   line-height: 1.8;
   width: 84%;
-  padding: 0;
-  margin: auto;
+  padding-left: 8%;
+  padding-right: 3%;
+  margin-right: 5%;
   margin-top: 7%;
+  margin-bottom: 7%;
   white-space: pre-line;
 }
 
@@ -147,14 +149,16 @@
   margin-left: 5%;
   margin-right: 5%;
   position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  align-content: center;
 }
 
 .photo-details-description p, .photo-details-description-poem p {
   height: 86%;
-  overflow: scroll;
+  overflow-y: auto;
+}
+
+.photo-details-close-mobile-text {
+  padding: 0;
 }
 
 .photo-details-location-text h3 {
@@ -163,17 +167,41 @@
   text-align: center;
 }
 
-@media only screen and (max-width: 600px) {
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(200, 200, 200); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: grey; 
+}
+
+@media only screen and (max-width: 600px), only screen and (min-width: 600px) and (max-width: 1300px) and (orientation: portrait) {
   .photo-details {
     width: 90%;
+    min-width: unset;
+    max-width: 600px;
     height: 100%;
     min-height: 0px;
-    max-height: none;
+    max-height: unset;
     position: fixed;
-    top: 0%;
-    left: 0%;
-    transform: translate(0%, 0%);
-    margin-left: 5%;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%, -50%);
+    margin: auto;
     z-index: 20;
     overflow-y: auto;
     -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
@@ -198,11 +226,10 @@
   
   .photo-details-right {
     width: 100%;
-    height: 620px;
-    aspect-ratio: 1/2;
+    height: unset;
+    aspect-ratio: unset;
     margin-bottom: 40px;
     float: none;
-    display: block;
   }
 
   .photo-details-left-padding, .photo-details-right-padding, .photo-details-close {
@@ -254,6 +281,7 @@
     height: 50px;
     background-color: #E8E8E8;
     position: relative;
+    flex: none;
   }
 
   .photo-details-title h1, .photo-details-title h2, .photo-details-title h3, .photo-details-location-text h3  {
@@ -278,45 +306,52 @@
 
   .photo-details-description, .photo-details-description-poem {
     width: 100%;
-    height: 340px;
+    height: fit-content;
     background-color: #E8E8E8;
     position: relative;
     margin-bottom: 20px;
+    flex: none;
   }
 
   .photo-details-description p {
     font-size: 14px;
     letter-spacing: .05rem;
-    line-height: 1.7;
+    line-height: 1.8;
     width: 90%;
     margin: auto;
-    margin-left: 5%;
-    margin-top: 5%;
-    position: absolute;
+    padding: 5%;
   }
   
   .photo-details-description-poem p {
     font-size: 14px;
     letter-spacing: .05rem;
-    line-height: 1.5;
+    line-height: 1.8;
     width: 90%;
     margin: auto;
-    margin-left: 5%;
-    margin-right: 5%;
-    position: absolute;
+    padding: 5%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    position: unset;
+  }
+
+  .photo-details-description p, .photo-details-description-poem p {
+    height: fit-content;
+    overflow-y: auto;
   }
   
   .photo-details-location {
     width: 100%;
     height: 160px;
     background-color: #E8E8E8;
+    flex: none;
   }
   
   .photo-details-location-text {
     width: 100%;
     height: 30px;
     background-color: #E8E8E8;
-    position: absolute;
+    position: relative;
+    flex: none;
   }
 
   .photo-details-location-text h3 {
@@ -325,7 +360,7 @@
   }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 1300px) {
+@media only screen and (min-width: 600px) and (max-width: 1300px) and (orientation: landscape) {
   .photo-details {
     width: fit-content;
     min-width: max-content;
