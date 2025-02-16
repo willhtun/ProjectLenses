@@ -70,8 +70,12 @@ class App extends React.Component {
             </Grid2>
           </div>
           <div class="contacts-container">
-            <a target="_blank" href="https://www.instagram.com/thewillfortography/" style={{ backgroundImage:"url(/instagram.svg)" }} class="contacts-instagram"></a>
-            <a target="_blank" href="mailto:willhtun42@email.com" style={{ backgroundImage:"url(/email.svg)" }} class="contacts-email"></a>
+            <a target="_blank" href="mailto:willhtun42@email.com" style={{ backgroundImage:"url(/email.svg)" }} class="contacts-email">
+              <p>willhtun42@gmail.com</p>
+            </a>
+            <a target="_blank" href="https://www.instagram.com/thewillfortography/" style={{ backgroundImage:"url(/instagram.svg)" }} class="contacts-instagram">
+              <p>@willfortography</p>
+            </a>
             <h3 class="contacts-name">Willem Lu</h3>
           </div>
           <h4>© 2025 by Willem Lu</h4>
