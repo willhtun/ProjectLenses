@@ -6,14 +6,15 @@ import PhotoDetails from './PhotoDetails';
 function PhotoThumbnail(props) {
   const [photoState, setPhotoState] = useState(false);
   const [photoLoaded, setPhotoLoaded] = useState(false);
-  const photo_thumbnail_url = props.photoData["s3_thumbnail_url"]
+  const photo_thumbnail_url = props.photoData["s3_thumbnail_url"];
+  const photo_navigate_to = props.stillLife;
   const navigate = useNavigate();
 
   const showPhoto = (bool) => {
     setPhotoState(bool)
     if (bool) {
       document.body.style.overflow='hidden'
-      navigate("/");
+      navigate("/" + photo_navigate_to);
     } else {
       document.body.style.overflow='auto'
     }

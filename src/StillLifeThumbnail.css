@@ -1,0 +1,64 @@
+.still-life-thumbnail {
+    width: 610px;
+    height: 500px;
+    background-color: rgb(200, 200, 200);
+    margin: 10px;
+    padding: 0px;
+    border: none;
+    background-size: auto;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    text-align: center;
+    line-height: 500px;
+}
+
+.still-life-thumbnail:hover {
+    opacity: 75%;
+    background-color:rgba(0, 0, 0, 0.75);
+}
+
+.still-life-thumbnail h2 {
+  font-family: "Afacad", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  width: 100%;
+  color: white;
+  margin-top: 0px;
+}
+
+.still-life-details-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    top: 0;
+    left: 0;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+}
+
+.still-life-details-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+@media only screen and (max-width: 600px) {
+    .still-life-thumbnail {
+        width: 160px;
+        height: 200px;
+        margin: 10px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1300px) {
+    .still-life-thumbnail {
+        width: 320px;
+        height: 400px;
+        margin: 10px;
+    }
+}

@@ -1,11 +1,11 @@
-import './App.css'
+import './Home.css'
 import React from 'react';
-import PhotoThumbnail from './PhotoThumbnail.jsx'
+import StillLifeThumbnail from './StillLifeThumbnail.jsx'
 import Grid2 from '@mui/material/Grid2';
 import axios from 'axios';
 import config from '../configuration/prod.json';
 
-class App extends React.Component {
+class Still extends React.Component {
   constructor() {
     super(); 
     this.state = { photoGrids: [], grid_column_size: window.innerWidth < 600? 6: 4 }
@@ -39,13 +39,19 @@ class App extends React.Component {
   setPhotoThumbnails(data) {
     let tempPhotoGrids = []
     data.sort(function(a, b) {return a['sort_key'] - b['sort_key']});
-    for (let i = 0; i < data.length; i++) {
-      tempPhotoGrids.push(
-        <Grid2 size={this.grid_column_size}>
-          <PhotoThumbnail photoData={data[i]}></PhotoThumbnail>
-        </Grid2>
-      )
-    }
+
+    tempPhotoGrids.push(
+      <Grid2 size={this.grid_column_size}>
+        <StillLifeThumbnail photoData={data[1]} stillLife="still"></StillLifeThumbnail>
+      </Grid2>
+    )
+
+    tempPhotoGrids.push(
+      <Grid2 size={this.grid_column_size}>
+        <StillLifeThumbnail photoData={data[2]} stillLife="life"></StillLifeThumbnail>
+      </Grid2>
+    )
+
     this.setState({
       photoGrids: tempPhotoGrids
     });
@@ -60,29 +66,28 @@ class App extends React.Component {
       return (
         <div>
           <h2>Through My</h2>
-          <h1>LENSES</h1>
+          <h1>L E N S E S</h1>
           <p>
-            The world around us constantly evokes feelings and emotions in us, whether it be through nature or man-made structures. These are the ones that compelled me to capture the fleeting moment, from the particular angle, within the specific frame.
+            As we move forward in time, our paths with the world around us converge and diverge constantly. These are the times when I was compelled to capture the fleeting moment in a frame in the hope of holding onto them for just a little longer.
           </p>
           <div class="photo-grid">
             <Grid2 container spacing={0}>
               {this.state.photoGrids}
             </Grid2>
           </div>
-          <div class="contacts-container">
+          <div class="contacts-container-fixed-bottom">
             <a target="_blank" href="mailto:willhtun42@email.com" style={{ backgroundImage:"url(/email.svg)" }} class="contacts-email">
               <p>willhtun42@gmail.com</p>
             </a>
             <a target="_blank" href="https://www.instagram.com/thewillfortography/" style={{ backgroundImage:"url(/instagram.svg)" }} class="contacts-instagram">
               <p>@willfortography</p>
             </a>
-            <h3 class="contacts-name">Willem Lu</h3>
+            <h4>© 2025 by Willem Lu</h4>
           </div>
-          <h4>© 2025 by Willem Lu</h4>
         </div>
       )
     }
   }
 }
 
-export default App
+export default Still
