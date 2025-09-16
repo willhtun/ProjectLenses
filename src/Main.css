@@ -108,10 +108,37 @@ a:-webkit-any-link {
   color: gray;
 }
 
+.still-life-header {
+  margin: auto;
+  width: 1260px;
+  position: relative;
+}
+
 .still-life-h2 {
+  width: 80%;
   font-size: 36px;
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.still-life-h2-left {
+  width: 10%;
+  font-size: 36px;
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  margin: 0px;
+  text-align: left;;
+}
+
+.still-life-h2-right {
+  width: 10%;
+  font-size: 36px;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  margin: 0px;
+  text-align: right;
 }
 
 @media only screen and (max-width: 600px) {
@@ -175,6 +202,10 @@ a:-webkit-any-link {
   .contacts-email p, .contacts-instagram p {
     display: none;
   } 
+
+  .still-life-header {
+    width: 360px;
+  }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1300px) {
@@ -238,4 +269,8 @@ a:-webkit-any-link {
   .contacts-email p, .contacts-instagram p {
     display: none;
   } 
+
+  .still-life-header {
+    width: 680px;
+  }
 }

@@ -1,4 +1,4 @@
-import './Home.css'
+import './Main.css'
 import React from 'react';
 import StillLifeThumbnail from './StillLifeThumbnail.jsx'
 import Grid2 from '@mui/material/Grid2';
@@ -27,7 +27,7 @@ class Still extends React.Component {
 
   
   fetchPhotos() {
-    axios.get(config.lensesBackendUrl + "/v1/photos")
+    axios.get(config.lensesBackendUrl + "/v1/photos/category/still")
       .then(response => {
         this.setPhotoThumbnails(response.data);
       })

@@ -10,7 +10,7 @@ function Admin(props) {
   const { getUserPassword } = useAuth();
 
   const fetchPhotos = () => {
-    axios.get(config.lensesBackendUrl + "/v1/photos")
+    axios.get(config.lensesBackendUrl + "/v1/photos/category/still")
       .then(response => {
         setEntry(response.data);
       })
@@ -62,7 +62,7 @@ function Admin(props) {
       },
       "is_poem": isPoemChecked
     }
-    axios.put(config.lensesBackendUrl + "/v1/photos/" + formData["id"], payload, {
+    axios.put(config.lensesBackendUrl + "/v1/photos/details/" + formData["id"], payload, {
       headers: {
         'Authorization': getUserPassword()
       }

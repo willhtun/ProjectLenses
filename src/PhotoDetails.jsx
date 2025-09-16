@@ -9,11 +9,9 @@ function PhotoDetails(props) {
   const photo_thumbnail_url = props.photoData["s3_thumbnail_url"]
   const photo_title = props.photoData["title"]
   const photo_date = props.photoData["date"]
-  const photo_description = props.photoData["description"]
-  const photo_description_is_poem = props.photoData["is_poem"]
   const photo_latitude = props.photoData["location"]["latitude"]
   const photo_longitude = props.photoData["location"]["longitude"]
-  const photo_location_name = props.photoData["location"]["name"]
+  const photo_landscape = props.photoData["landscape"]
 
   const windowResized = (e) => {
     const handleResize = () => setState({
@@ -37,6 +35,32 @@ function PhotoDetails(props) {
   }
 
   return (
+    <div class="photo-details">
+      <div class="photo-details-left-padding">
+        <div class="photo-details-close-wrapper" onClick={closePhoto}>
+          <div class="photo-details-close" style={{ backgroundImage:"url(/close.svg)" }}></div>
+        </div>
+      </div>
+      <div class="photo-details-img" style={{ aspectRatio: photo_landscape? "5/4": "4/5" }}>
+        {!photoLoaded && <img class="photo-details-img-loading" src={photo_thumbnail_url}></img> }
+        <img src={photo_url} onLoad={handleImageLoaded}></img>
+        <div class="photo-details-title">
+          <h1>{photo_title}</h1>
+          <h2>{photo_date}</h2>
+          <a href={"https://www.google.com/maps/@" + photo_latitude + "%2C" + photo_longitude}>
+            <div class="photo-details-location-icon" style={{ backgroundImage:"url(/location.svg)" }}></div>
+          </a>
+        </div>
+        <div class="photo-details-close-mobile" onClick={closePhoto}>
+          <div class="photo-details-close-mobile-icon" style={{ backgroundImage:"url(/close.svg)" }}></div>
+          <div class="photo-details-close-mobile-text">
+            <p>back</p>
+          </div>
+        </div>
+      </div>
+      <div class="photo-details-right-padding"></div>
+    </div>
+    /*
     <div class="photo-details">
       <div class="photo-details-left-padding">
         <div class="photo-details-close-wrapper" onClick={closePhoto}>
@@ -72,6 +96,7 @@ function PhotoDetails(props) {
         </div>
       </div>
     </div> 
+    */
   )
 }
 

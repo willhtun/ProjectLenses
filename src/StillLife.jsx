@@ -1,4 +1,4 @@
-import './Home.css'
+import './Main.css'
 import React from 'react';
 import PhotoThumbnail from './PhotoThumbnail.jsx'
 import Grid2 from '@mui/material/Grid2';
@@ -28,7 +28,7 @@ class StillLife extends React.Component {
   }
 
   fetchPhotos() {
-    axios.get(config.lensesBackendUrl + "/v1/photos")
+    axios.get(config.lensesBackendUrl + "/v1/photos/category/" + this.stillLife)
       .then(response => {
         this.setPhotoThumbnails(response.data);
       })
@@ -60,7 +60,11 @@ class StillLife extends React.Component {
     } else {
       return (
         <div>
-          <h2 class="still-life-h2">{this.props.stillLife.split('').join(' ').toUpperCase()}</h2>
+          <div class="still-life-header">
+            <h2 class="still-life-h2-left">. .</h2>
+            <h2 class="still-life-h2">{this.props.stillLife.split('').join(' ').toUpperCase()}</h2>
+            <h2 class="still-life-h2-right">. .</h2>
+          </div>
           <div class="photo-grid">
             <Grid2 container spacing={0}>
               {this.state.photoGrids}
