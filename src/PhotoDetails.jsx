@@ -6,12 +6,12 @@ function PhotoDetails(props) {
   const navigate = useNavigate();
   const [photoLoaded, setPhotoLoaded] = useState(false);
   const photo_url = props.photoData["s3_image_url"]
-  const photo_thumbnail_url = props.photoData["s3_thumbnail_url"]
   const photo_title = props.photoData["title"]
   const photo_date = props.photoData["date"]
   const photo_latitude = props.photoData["location"]["latitude"]
   const photo_longitude = props.photoData["location"]["longitude"]
   const photo_landscape = props.photoData["landscape"]
+  const photo_loading_url = photo_landscape? props.photoData["s3_loading_url"]: props.photoData["s3_thumbnail_url"]
 
   const windowResized = (e) => {
     const handleResize = () => setState({
@@ -42,7 +42,7 @@ function PhotoDetails(props) {
         </div>
       </div>
       <div class="photo-details-img" style={{ aspectRatio: photo_landscape? "5/4": "4/5" }}>
-        {!photoLoaded && <img class="photo-details-img-loading" src={photo_thumbnail_url}></img> }
+        {!photoLoaded && <img class="photo-details-img-loading" src={photo_loading_url}></img> }
         <img src={photo_url} onLoad={handleImageLoaded}></img>
         <div class="photo-details-title">
           <h1>{photo_title}</h1>
@@ -60,43 +60,6 @@ function PhotoDetails(props) {
       </div>
       <div class="photo-details-right-padding"></div>
     </div>
-    /*
-    <div class="photo-details">
-      <div class="photo-details-left-padding">
-        <div class="photo-details-close-wrapper" onClick={closePhoto}>
-          <div class="photo-details-close" style={{ backgroundImage:"url(/close.svg)" }}></div>
-        </div>
-      </div>
-      <div class="photo-details-left">
-        {!photoLoaded && <img class="photo-details-left-loading" src={photo_thumbnail_url}></img> }
-        <img src={photo_url} onLoad={handleImageLoaded}></img>
-      </div>
-      <div class="photo-details-right">
-        <div class="photo-details-title">
-          <h1>{photo_title}</h1>
-          <h2>{photo_date}</h2>
-        </div>
-        <div class={`photo-details-description${photo_description_is_poem? "-poem": ""}`}>
-          <p>{photo_description}</p>
-        </div>
-        <iframe 
-          class="photo-details-location"
-          loading="lazy" 
-          src={ "https://www.google.com/maps/embed/v1/place?q=" + photo_latitude + "%2C" + photo_longitude + "&key=AIzaSyCzAeGno02JZsVHOHo56uZJLvSn0It6ioE" }>
-        </iframe>
-        <div class="photo-details-location-text">
-          <h3>{photo_location_name}</h3>
-        </div>
-      </div>
-      <div class="photo-details-right-padding"></div>
-      <div class="photo-details-close-mobile" onClick={closePhoto}>
-        <div class="photo-details-close-mobile-icon" style={{ backgroundImage:"url(/close.svg)" }}></div>
-        <div class="photo-details-close-mobile-text">
-          <p>back</p>
-        </div>
-      </div>
-    </div> 
-    */
   )
 }
 

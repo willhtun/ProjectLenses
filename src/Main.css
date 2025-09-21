@@ -14,7 +14,7 @@ h1 {
 
 h2 {
   font-size: 36px;
-  margin-top: 100px;
+  margin-top: 75px;
 }
 
 h3 {
@@ -38,7 +38,7 @@ p {
   letter-spacing: .1rem;
   width: 1000px;
   margin: auto;
-  margin-bottom: 100px;
+  margin-bottom: 75px;
   padding-left: 130px;
   padding-right: 130px;
 }
@@ -52,20 +52,9 @@ p {
   width: 1260px;
   height: 50px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 75px;
   margin-bottom: 10px;
   text-align: center;
-}
-
-.contacts-container-fixed-bottom {
-  width: 100%;
-  height: 50px;
-  margin: auto;
-  margin-top: 50px;
-  margin-bottom: 10px;
-  text-align: center;
-  position: fixed; 
-  bottom: 50px;
 }
 
 .contacts-name {
@@ -139,6 +128,55 @@ a:-webkit-any-link {
   right: 10px;
   margin: 0px;
   text-align: right;
+}
+
+.still-life-back-home {
+  width: fit-content;
+  height: 25px;
+  float: none;
+  margin: auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  cursor: pointer;
+  display: block;
+  filter: brightness(0%);
+}
+
+.still-life-back-home:hover {
+  filter: brightness(50%);
+}
+
+.still-life-back-home-icon {
+  height: 100%;
+  aspect-ratio: 1/2;
+  margin-right: 20px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  display: inline-block;
+}
+
+.still-life-back-home-text {
+  width: auto;
+  height: 100%;
+  line-height: 50%;
+  color: #E8E8E8;
+  align-items: center;
+  display: inline-block;
+  margin: 0px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.still-life-back-home-text p {
+  width: fit-content;
+  padding: 0px;
+  font-size: normal;
+  font-family: "Asar", serif;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: .1rem;
 }
 
 @media only screen and (max-width: 600px) {

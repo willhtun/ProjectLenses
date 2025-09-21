@@ -5,7 +5,7 @@
     margin: 10px;
     padding: 0px;
     border: none;
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
     text-align: center;
@@ -53,6 +53,13 @@
         width: 160px;
         height: 200px;
         margin: 10px;
+        line-height: 200px;
+    }
+
+    .still-life-thumbnail h2 {
+        font-size: 20px;
+        width: 100%;
+        margin-top: 0px;
     }
 }
 
@@ -61,5 +68,12 @@
         width: 320px;
         height: 400px;
         margin: 10px;
+        line-height: 400px;
+    }
+
+    .still-life-thumbnail h2 {
+        font-size: 30px;
+        width: 100%;
+        margin-top: 0px;
     }
 }

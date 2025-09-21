@@ -33,7 +33,7 @@ function PhotoThumbnail(props) {
 
       { photoState && (
         <div class="photo-details-wrapper">
-          <div class="photo-details-background"></div>
+          <div class="photo-details-background" onClick={showPhoto.bind(null, false)}></div>
           <div><PhotoDetails photoData={props.photoData} showPhotoHandler={showPhoto}></PhotoDetails></div>
         </div>
       ) }

@@ -75,7 +75,7 @@ class Still extends React.Component {
               {this.state.photoGrids}
             </Grid2>
           </div>
-          <div class="contacts-container-fixed-bottom">
+          <div class="contacts-container">
             <a target="_blank" href="mailto:willhtun42@email.com" style={{ backgroundImage:"url(/email.svg)" }} class="contacts-email">
               <p>willhtun42@gmail.com</p>
             </a>
