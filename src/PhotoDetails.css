@@ -182,8 +182,8 @@
     width: 90%;
     min-width: unset;
     max-width: 600px;
-    height: 100%;
-    min-height: 0px;
+    height: unset;
+    min-height: unset;
     max-height: unset;
   }
 
@@ -198,8 +198,6 @@
     background-repeat: no-repeat;
     float: none;
     margin-right: 0;
-    margin-top: 50px;
-    margin-bottom: 20px;
   }
 
   .photo-details-left-padding, .photo-details-right-padding, .photo-details-close {

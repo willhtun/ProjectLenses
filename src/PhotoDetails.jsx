@@ -47,7 +47,7 @@ function PhotoDetails(props) {
         <div class="photo-details-title">
           <h1>{photo_title}</h1>
           <h2>{photo_date}</h2>
-          <a href={"https://www.google.com/maps/@" + photo_latitude + "%2C" + photo_longitude}>
+          <a href={"https://www.google.com/maps/place/" + photo_latitude + "%2C" + photo_longitude} target="_blank">
             <div class="photo-details-location-icon" style={{ backgroundImage:"url(/location.svg)" }}></div>
           </a>
         </div>

@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 function StillLife(props) {
   const [photoGrids, setPhotoGrids] = useState([])
   const [photoResponseData, setPhotoResponseData] = useState([])
-  const [gridColumnSize, setGridColumnSize] = useState(window.innerWidth < 600? 6: 4)
+  const [gridColumnSize, setGridColumnSize] = useState(window.innerWidth < 1300? 6: 4)
   const stillLife = props.stillLife;
   const navigate = useNavigate();
 
@@ -21,7 +21,9 @@ function StillLife(props) {
   }, []);
 
   useEffect(() => {
-    setPhotoThumbnails(photoResponseData)
+    if (photoResponseData.length > 0) {
+      setPhotoThumbnails(photoResponseData)
+    }
   }, [gridColumnSize]);
 
   const handleResize = () => {

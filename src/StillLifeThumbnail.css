@@ -1,5 +1,5 @@
 .still-life-thumbnail {
-    width: 610px;
+    width: 600px;
     height: 500px;
     background-color: rgb(200, 200, 200);
     margin: 10px;
@@ -19,13 +19,13 @@
 }
 
 .still-life-thumbnail h2 {
-  font-family: "Afacad", serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  width: 100%;
-  color: white;
-  margin-top: 0px;
+    font-family: "Afacad", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    width: 100%;
+    color: white;
+    margin-top: 0px;
 }
 
 .still-life-details-background {
@@ -48,27 +48,27 @@
     z-index: 5;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 600px) and (max-width: 1300px) {
     .still-life-thumbnail {
-        width: 160px;
-        height: 200px;
+        width: 320px;
+        height: 266px;
         margin: 10px;
-        line-height: 200px;
+        line-height: 266px;
     }
 
     .still-life-thumbnail h2 {
-        font-size: 20px;
+        font-size: 30px;
         width: 100%;
         margin-top: 0px;
     }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 1300px) {
+@media only screen and (max-width: 600px) {
     .still-life-thumbnail {
-        width: 320px;
-        height: 400px;
+        width: 340px;
+        height: 283px;
         margin: 10px;
-        line-height: 400px;
+        line-height: 283px;
     }
 
     .still-life-thumbnail h2 {
