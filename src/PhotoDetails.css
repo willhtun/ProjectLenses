@@ -185,6 +185,7 @@
     height: unset;
     min-height: unset;
     max-height: unset;
+    top: calc(50%);
   }
 
   .photo-details::-webkit-scrollbar {
@@ -292,7 +293,6 @@
     height: 85%;
     min-height: 500px;
     max-height: 900px;
-
   }
 
   .photo-details-title h1, .photo-details-title h2 {
