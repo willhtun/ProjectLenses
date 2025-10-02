@@ -11,7 +11,7 @@ function PhotoDetails(props) {
   const photo_latitude = props.photoData["location"]["latitude"]
   const photo_longitude = props.photoData["location"]["longitude"]
   const photo_landscape = props.photoData["landscape"]
-  const photo_loading_url = photo_landscape? props.photoData["s3_loading_url"]: props.photoData["s3_thumbnail_url"]
+  const photo_loading_url = photo_landscape? props.photoData["s3_thumbnail_url"].replace("thumbnail", "loading"): props.photoData["s3_thumbnail_url"];
 
   const windowResized = (e) => {
     const handleResize = () => setState({
@@ -42,8 +42,7 @@ function PhotoDetails(props) {
         </div>
       </div>
       <div class="photo-details-img" style={{ aspectRatio: photo_landscape? "5/4": "4/5" }}>
-        {!photoLoaded && <img class="photo-details-img-loading" src={photo_loading_url}></img> }
-        <img src={photo_url} onLoad={handleImageLoaded}></img>
+        <img src={photoLoaded? photo_url: photo_loading_url} onLoad={handleImageLoaded}></img>
         <div class="photo-details-title">
           <h1>{photo_title}</h1>
           <h2>{photo_date}</h2>

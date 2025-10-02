@@ -35,6 +35,7 @@ function StillLife(props) {
       .then(response => {
         setPhotoResponseData(response.data)
         setPhotoThumbnails(response.data);
+        cacheLandscapeLoadingPhotos(response.data);
       })
       .catch(error => {
         console.error(error);
@@ -52,6 +53,15 @@ function StillLife(props) {
       )
     }
     setPhotoGrids(tempPhotoGrids);
+  }
+
+  const cacheLandscapeLoadingPhotos = (data) => {
+    for (let i = 0; i < data.length; i++) {
+      if (data[i]["landscape"]) {
+        const img = new Image();
+        img.src = data[i]["s3_thumbnail_url"].replace("thumbnail", "loading");
+      }
+    }
   }
 
   const backHomeHandler = () => {

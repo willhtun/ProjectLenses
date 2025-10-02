@@ -21,7 +21,7 @@ function StillLifeThumbnail(props) {
 
   return (
     <div style={{ height:"fit-content" }}>
-      <div class="still-life-thumbnail" style={{backgroundImage: "url(" + photo_thumbnail_url + ")"}} onClick={goToStillLife.bind(null)}>
+      <div class="still-life-thumbnail" style={{backgroundImage: "url(" + photo_thumbnail_url + ")", backgroundPositionY: props.homeYPositionOverride}} onClick={goToStillLife.bind(null)}>
         <h2>{stillLife.split('').join(' ').toUpperCase()}</h2>
       </div>
 

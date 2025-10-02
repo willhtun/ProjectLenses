@@ -28,7 +28,7 @@ function Home(props) {
   }
 
   const fetchPhotos = () => {
-    axios.get(config.lensesBackendUrl + "/v1/photos/category/still")
+    axios.get(config.lensesBackendUrl + "/v1/photos/category/life")
       .then(response => {
         setPhotoResponseData(response.data)
         setPhotoThumbnails(response.data);
@@ -38,20 +38,31 @@ function Home(props) {
       });
   }
 
+  // Still
   const setPhotoThumbnails = (data) => {
     let tempPhotoGrids = []
     data.sort(function(a, b) {return a['sort_key'] - b['sort_key']});
     console.log(data)
 
+    let stillThumbnail = {
+      s3_thumbnail_url: "https://lenses-raw-photos.s3.us-west-1.amazonaws.com/lands_end.jpg"
+    }
+
+    let lifeThumbnail = {
+      s3_thumbnail_url: "https://lenses-raw-photos.s3.us-west-1.amazonaws.com/ollantaytambo_ladies_thumbnail.jpg"
+    }
+
+    // Still 9
     tempPhotoGrids.push(
       <Grid2 size={gridColumnSize}>
-        <StillLifeThumbnail photoData={data[1]} stillLife="still"></StillLifeThumbnail>
+        <StillLifeThumbnail photoData={stillThumbnail} stillLife="still" homeYPositionOverride="50%"></StillLifeThumbnail>
       </Grid2>
     )
-
+ 
+    // Life 11
     tempPhotoGrids.push(
       <Grid2 size={gridColumnSize}>
-        <StillLifeThumbnail photoData={data[2]} stillLife="life"></StillLifeThumbnail>
+        <StillLifeThumbnail photoData={lifeThumbnail} stillLife="life" homeYPositionOverride="83%"></StillLifeThumbnail>
       </Grid2>
     )
 
