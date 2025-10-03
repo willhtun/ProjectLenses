@@ -79,7 +79,7 @@ function Home(props) {
         <h2>Through My</h2>
         <h1>L E N S E S</h1>
         <p>
-          As we move forward in time, our paths with the world around us converge and diverge constantly. These are the times when I was compelled to capture the fleeting moment in a frame in the hope of holding onto them for just a little longer.
+          As we walk through life, we constantly cross paths and part ways with the world and people around us. These are the moments I managed to capture in a frame, in the hope of holding onto them for just a little longer.
         </p>
         <div class="photo-grid">
           <Grid2 container spacing={0}>
