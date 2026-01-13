@@ -118,7 +118,7 @@
 }
 
 .photo-details-title h1 {
-  left: 4%;
+  left: 23px;
   text-align: left;
 }
 
@@ -130,9 +130,10 @@
 .photo-details-location-icon {
   width: 30px;
   height: 30px;
-  margin: 15px;
+  margin: 0px;
+  margin-top: 15px;
   position: absolute;
-  right: 0%;
+  right: 15px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-origin: content-box;
@@ -264,7 +265,7 @@
   }
 
   .photo-details-title h1 {
-    left: 5%;
+    left: 20px;
     text-align: left;
   }
   
@@ -276,9 +277,10 @@
   .photo-details-location-icon {
     width: 27px;
     height: 27px;
-    margin: 12px;
+    margin: 0px;
+    margin-top: 12px;
     position: absolute;
-    right: 0%;
+    right: 15px;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-origin: content-box;

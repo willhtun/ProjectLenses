@@ -1,5 +1,5 @@
 .still-life-thumbnail {
-    width: 600px;
+    width: 610px;
     height: 500px;
     background-color: rgb(200, 200, 200);
     margin: 10px;
@@ -10,6 +10,7 @@
     cursor: pointer;
     text-align: center;
     line-height: 500px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .still-life-thumbnail:hover {
